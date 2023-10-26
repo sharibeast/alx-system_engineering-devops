@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script  that shows content of file /etc/passwd
+counter=0
+while [ $counter -lt 2 ]
+do
+    cut -d ":" -f 1,3,6 /etc/passwd
+    x=$((x+1))
+done
