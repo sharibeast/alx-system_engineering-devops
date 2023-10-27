@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Bash script to:
+#Create the file /var/run/myscript.pid containing its PID
+#Display To infinity and beyond indefinitely
+#Display I hate the kill command when receiving a SIGTERM signal
+
+sudo touch /var/run/myscript.pid
+sudo chmod u+x /var/run/myscript.pid
+echo $$ > /var/run/myscript.pid
+
+trap "echo I hate the kill command; sudo rm /var/run/myscript.pid" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "sudo rm /var/run/myscript.pid" SIGQUIT
+
+while 'true'
+do
+    echo "To infinity and beyond"
+    sleep2
+done
