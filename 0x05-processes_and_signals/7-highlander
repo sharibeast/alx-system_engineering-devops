@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script that displays to Infinity and beyond
-trap "echo I am invicible!!!" SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
 while 'true'
 do
     echo "To infinity and beyond"
